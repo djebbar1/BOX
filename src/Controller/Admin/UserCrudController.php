@@ -9,7 +9,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Endroid\QrCode\Builder\BuilderInterface;
 use Symfony\Component\Uid\Uuid;
+use Endroid\QrCodeBundle\Response\QrCodeResponse;
+
 
 class UserCrudController extends AbstractCrudController
 {
@@ -24,6 +27,14 @@ class UserCrudController extends AbstractCrudController
         $user->setUuid(Uuid::v4());
         return $user;
     }
+  /*  public function __construct(BuilderInterface $customQrCodeBuilder)
+{
+    $result = $customQrCodeBuilder
+        ->size(400)
+        ->margin(20)
+        ->build();
+        $response = new QrCodeResponse($result);
+}*/
     public function configureFields(string $pageName): iterable
     {
         return [

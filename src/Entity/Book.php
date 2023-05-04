@@ -24,7 +24,6 @@ class Book
     #[Assert\NotBlank]
     #[Assert\Length(min:3)]
 
-
     private ?string $title = null;
 
     #[ORM\Column(length: 255)]
@@ -44,7 +43,7 @@ class Book
     #[Groups("book:read")]
 
 
-    private ?bool $isAvailable = null;
+    public ?bool $isAvailable = null;
 
     #[ORM\Column(length: 255)]
     #[Groups("book:read")]
@@ -53,12 +52,10 @@ class Book
 
     #[ORM\Column(type: Types::TEXT)]
     #[Groups("book:read")]
-
     private ?string $resume = null;
 
     #[ORM\ManyToOne(inversedBy: 'books')]
-  
-    private ?Borrow $idBorrow = null;
+   private ?Borrow $idBorrow = null;
 
     #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'books')]
     #[Groups("book:read")]
@@ -67,6 +64,7 @@ class Book
     #[ORM\ManyToOne(inversedBy: 'books')]
     #[Groups("book:read")]
     private ?Box $idBox = null;
+  
     public function __toString()
     {
         return $this->title;

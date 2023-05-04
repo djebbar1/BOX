@@ -18,6 +18,7 @@ class Box
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("book:read")]
     private ?string $street = null;
 
     #[ORM\Column]
@@ -37,7 +38,7 @@ class Box
     private ?int $capacity = null;
 
     #[ORM\OneToMany(mappedBy: 'idBox', targetEntity: Book::class)]
-    
+   
     private Collection $books;
     public function __toString()
     {
