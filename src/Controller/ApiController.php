@@ -25,7 +25,6 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class ApiController extends AbstractController
 {
-   
     #[Route('/api/book/{search}', name: 'api_search', methods:["GET"])]
     public function pie(BookRepository $book, SerializerInterface $serializer, Request $request, $search): Response
     {
@@ -126,7 +125,6 @@ class ApiController extends AbstractController
     #[Route('/api/v1/user/login', name: 'app_api', methods:["POST"])]
     public function retourn(SerializerInterface $serializer, Request $request): Response
     {
-
         $uuid = $request->get("uuid");
         try {
             $users = $this->getDoctrine()

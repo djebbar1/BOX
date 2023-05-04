@@ -13,7 +13,6 @@ use Endroid\QrCode\Builder\BuilderInterface;
 use Symfony\Component\Uid\Uuid;
 use Endroid\QrCodeBundle\Response\QrCodeResponse;
 
-
 class UserCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string

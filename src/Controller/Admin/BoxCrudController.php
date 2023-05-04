@@ -16,7 +16,6 @@ class BoxCrudController extends AbstractCrudController
         return Box::class;
     }
 
-    
     /*     public function configureFields(string $pageName): iterable     
     {         
         return [             
@@ -26,5 +25,5 @@ class BoxCrudController extends AbstractCrudController
         ];     
     }     
     */
-    
+
 }
