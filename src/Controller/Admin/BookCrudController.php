@@ -12,15 +12,12 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-
 class BookCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
         return Book::class;
     }
-
-
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -34,6 +31,5 @@ class BookCrudController extends AbstractCrudController
             AssociationField::new('idCategory'),
             AssociationField::new('idBox')
         ];
-    }
-    
+    }    
 }

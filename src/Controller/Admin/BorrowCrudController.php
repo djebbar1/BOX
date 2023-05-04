@@ -8,15 +8,12 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 
-
-
 class BorrowCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
         return Borrow::class;
     }
-
     
     public function configureFields(string $pageName): iterable
     {
@@ -27,6 +24,5 @@ class BorrowCrudController extends AbstractCrudController
             AssociationField::new('idUser'),
             AssociationField::new('books')
         ];
-    }
-    
+    } 
 }
